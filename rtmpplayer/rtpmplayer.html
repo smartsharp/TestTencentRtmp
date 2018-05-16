@@ -1,0 +1,41 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+<script type="text/javascript" src="flowplayer-3.2.8.min.js"></script> 
+<title>RTMP Sample Player FlowPlayer</title> 
+</head> 
+   
+   
+<body>     
+    <h1>RTMP Sample Player FlowPlayer</h1> 
+   
+    <!-- this A tag is where your Flowplayer will be placed. it can be anywhere --> 
+    <a   
+         href="#" 
+         style="display:block;width:360px;height:720px"   
+         id="player">  
+    </a>  
+    <!-- this will install flowplayer inside previous A- tag. --> 
+    <script> 
+    flowplayer("player", "flowplayer-3.2.18.swf",{  
+        clip: {  
+          url: 'rtmp://192.168.30.113/live/livestream',
+          provider: 'rtmp', 
+          live: true,  
+        },   
+        plugins: {   
+           rtmp: {   
+             url: 'flowplayer.rtmp-3.2.8.swf',   
+             netConnectionUrl: 'rtmp://192.168.30.113/live/livestream'
+           }  
+       }  
+    }); 
+    </script> 
+   
+   
+    <p>        
+        Sample RTMP URL (Live) is "rtmp://192.168.30.113/live/livestream"
+    </p> 
+       
+</body> 
+</html>
